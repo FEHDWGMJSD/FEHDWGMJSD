@@ -1,0 +1,24 @@
+class GDP:
+    def __init__(self, consumption, investment, government_spending, exports, imports):
+        self.consumption = consumption
+        self.investment = investment
+        self.government_spending = government_spending
+        self.exports = exports
+        self.imports = imports
+
+    def calculate_gdp(self):
+        gdp = self.consumption + self.investment + self.government_spending + (self.exports - self.imports)
+        return gdp
+
+# Input values for the economic factors (in trillion rupees)
+consumption = 70
+investment = 35
+government_spending = 20
+exports = 30
+imports = 25
+
+# Create GDP object and calculate GDP
+india_gdp = GDP(consumption, investment, government_spending, exports, imports)
+gdp_value = india_gdp.calculate_gdp()
+
+print("GDP of India: {:.2f} trillion rupees".format(gdp_value))
